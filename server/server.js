@@ -1,8 +1,8 @@
 const express = require("express");
 const app = express();
+const fs = require("fs");
 
 function extractTextureNames(path) {
-  const fs = require("fs");
   const files = fs.readdirSync(path);
   let returnedArray = [];
 
@@ -11,6 +11,7 @@ function extractTextureNames(path) {
     let arr = [];
     let name;
 
+    //looks for the dot in the file name
     for (let i = 0; i < file.length; i++) {
       if (file[i] === ".") {
         pass = false;
@@ -19,10 +20,14 @@ function extractTextureNames(path) {
       if (!pass) {
         break;
       }
+
+      /*while dot not found, it puts the file name characters
+        into the array*/
       if (pass) {
         arr[i] = file[i];
       }
     }
+    //makes the file name into a normal string
     name = arr.join("");
     returnedArray.push(name);
   });
@@ -30,10 +35,14 @@ function extractTextureNames(path) {
 }
 
 app.get("/api", (req, res) => {
-  let textureNames = extractTextureNames(
+  const blocks = extractTextureNames(
     "../minecraf_texturepack/minecraft/textures/blocks"
   );
-  res.json({ textures: textureNames });
+
+  //send the response to client side with a JSON format
+  res.json({
+    blocks: blocks,
+  });
 });
 
 app.listen(5000, () => {
