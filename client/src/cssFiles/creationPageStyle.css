@@ -1,11 +1,85 @@
-.creation-textureView {
-    width: 300px;
-    height: 300px;
-    background-color: rgba(0, 0, 0, 0.5);
+.tSelection-container {
+    width: 100%;
+    min-height: 100px;
+    margin-top: 30px;
+    justify-content: space-evenly;
+    display: flex;
+}
+
+:root {
+    --backgroundColor: #1a1a1a;
+    --textColor: white;
+    --headerColor: #044563;
+    --sidebarColor: #032d40
+}
+
+.tSelection-textureName {
+    width: 210px;
+    text-align: center;
+    color: var(--textColor);
+    font-family: 'poppins', sans-serif;
+    font-size: 40px;
+}
+
+.tSelection-ImageContainer {
+    width: 210px;
+    height: 210px;
+    cursor: pointer;
+    background-size: cover;
+    background-position: center;
+}
+
+#tSelection-blocks {
+    background-image: url(../assets/Grass_Block.png);
+}
+
+#tSelection-items {
+    background-image: url(../assets/diamond_sword.png);
+}
+
+#tSelection-entity {
+    background-image: url(../assets/creeper.png);
+}
+
+#tSelection-environment {
+    background-image: url(../assets/sky.png);
+}
+
+#tSelection-gui {
+    background-image: url(../assets/Inventory.png);
+}
+
+#tSelection-others {
+    background-image: url(../assets/potion.png);
+}
+
+.tSelection-sidebar {
+    min-height: calc(100vh - 150px);
+    width: 200px;
+    background-color: var(--sidebarColor);
+    overflow-wrap: break-word;
+}
+
+#chest {
+    width: 60px;
+    height: 60px;
+    background-image: url(../assets/enderchest-opened.png);
+}
+
+#chest2 {
+    width: 40px;
+    height: 40px;
+    background-image: url(../assets/enderchest.png);
+    background-position: center;
+    background-size: cover;
+}
+
+.custom-blockPreview {
+    width: 400px;
+    height: 400px;
+    background-color: #121212;
     position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    display: grid;
-    place-items: center;
 }

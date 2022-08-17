@@ -34,14 +34,25 @@ function extractTextureNames(path) {
   return returnedArray;
 }
 
+function getDirectories(path) {
+  return fs.readdirSync(path).filter((file) => {
+    return fs.statSync(path + "/" + file).isDirectory();
+  });
+}
+
 app.get("/api", (req, res) => {
   const blocks = extractTextureNames(
     "../minecraf_texturepack/minecraft/textures/blocks"
   );
 
+  const EntityDirectories = getDirectories(
+    "../minecraf_texturepack/minecraft/textures/entity"
+  );
+
   //send the response to client side with a JSON format
   res.json({
     blocks: blocks,
+    entityDir: EntityDirectories,
   });
 });
 

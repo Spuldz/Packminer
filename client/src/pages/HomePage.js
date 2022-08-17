@@ -1,16 +1,10 @@
-import Header from "../components/HomePage/Header";
 import Home from "../components/HomePage/Home";
-import { useNavigate } from "react-router-dom";
+import Header from "../components/Header";
 
 function HomePage() {
-  const navigate = useNavigate();
-
-  function toCreationPage() {
-    navigate("/creation");
-  }
   return (
     <>
-      <Header toCreationPage={toCreationPage} />
+      <Header />
       <Home />
     </>
   );

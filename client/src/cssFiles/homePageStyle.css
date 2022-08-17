@@ -1,11 +1,23 @@
 .Home-Header {
     width: 100%;
-    height: 180px;
-    background-color: dodgerblue;
+    height: 150px;
+    background-color: var(--headerColor);
     display: flex;
+    color: var(--textColor);
     justify-content: space-evenly;
     place-items: center;
     justify-content: space-evenly;
+}
+
+:root {
+    --backgroundColor: #1a1a1a;
+    --textColor: white;
+    --headerColor: #044563;
+    --sidebarColor: #032d40
+}
+
+body {
+    background-color: var(--backgroundColor);
 }
 
 
@@ -82,7 +94,7 @@
     width: calc(100% - 300px);
     display: grid;
     place-items: center;
-    color: dodgerblue;
+    color: var(--textColor);
     font-family: 'poppins', sans-serif;
     font-size: 30px;
 }
