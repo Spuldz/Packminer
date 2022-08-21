@@ -7,6 +7,8 @@
     justify-content: space-evenly;
     place-items: center;
     justify-content: space-evenly;
+    z-index: 0;
+
 }
 
 :root {

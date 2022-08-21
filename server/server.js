@@ -45,14 +45,22 @@ app.get("/api", (req, res) => {
     "../minecraf_texturepack/minecraft/textures/blocks"
   );
 
+  //
+  //ENTITY
+  //
   const EntityDirectories = getDirectories(
     "../minecraf_texturepack/minecraft/textures/entity"
+  );
+
+  const armorstand = extractTextureNames(
+    "../minecraf_texturepack/minecraft/textures/entity/armorstand"
   );
 
   //send the response to client side with a JSON format
   res.json({
     blocks: blocks,
     entityDir: EntityDirectories,
+    armorstandDir: armorstand,
   });
 });
 

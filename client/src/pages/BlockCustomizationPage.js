@@ -12,7 +12,7 @@ function BlockCustomizationPage(props) {
   return (
     <>
       <Header />
-      <Sidebar data={props.data} test={test} />
+      <Sidebar data={props.data} test={test} dir={props.data.entityDir} />
       <BlockPreview text={selected} />
     </>
   );

@@ -58,18 +58,21 @@
     width: 200px;
     background-color: var(--sidebarColor);
     overflow-wrap: break-word;
+    z-index: 1;
 }
 
-#chest {
-    width: 60px;
-    height: 60px;
-    background-image: url(../assets/enderchest-opened.png);
-}
-
-#chest2 {
+.chest {
     width: 40px;
     height: 40px;
     background-image: url(../assets/enderchest.png);
+    background-position: center;
+    background-size: cover;
+}
+
+.chest-open {
+    width: 40px;
+    height: 40px;
+    background-image: url(../assets/enderchest-opened.png);
     background-position: center;
     background-size: cover;
 }
@@ -82,4 +85,52 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+}
+
+.custom-selection {
+    width: 100%;
+    min-height: calc(100vh - 190px);
+    color: white;
+    font-family: 'poppins', sans-serif;
+    user-select: none;
+    /* supported by Chrome and Opera */
+    -webkit-user-select: none;
+    /* Safari */
+    -khtml-user-select: none;
+    /* Konqueror HTML */
+    -moz-user-select: none;
+    /* Firefox */
+    -ms-user-select: none;
+    /* Internet Explorer/Edge */
+    font-size: 20px;
+}
+
+.custom-dir::before {
+    content: ' ';
+    background: url(../assets/enderchest.png);
+    background-size: contain;
+    height: 40px;
+    width: 40px;
+    display: inline-block;
+}
+
+.custom-item {
+    cursor: pointer;
+}
+
+.files-closed {
+    width: 100%;
+    min-height: 100px;
+    background-color: red;
+    display: none;
+}
+
+#files-open {
+    width: 100%;
+    min-height: 100px;
+    background-color: red;
+}
+
+.custom-item:hover {
+    background-color: rgba(0, 0, 0, 0.2)
 }
